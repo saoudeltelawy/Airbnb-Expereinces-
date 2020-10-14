@@ -1,0 +1,31 @@
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+html {
+  /* font-size: 10px; */
+  /* So that users can change zoom percentages and it will be 10 /16 */
+  font-size: 62.5%;   // Defines What 1 Rem is equal considering user changes!
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $dark-text-color;
+  padding: $main-padding;
+  box-sizing: border-box;
+}

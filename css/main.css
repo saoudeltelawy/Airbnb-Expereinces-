@@ -1,0 +1,182 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important; }
+
+html {
+  /* font-size: 10px; */
+  /* So that users can change zoom percentages and it will be 10 /16 */
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 2.8rem;
+  box-sizing: border-box; }
+
+/* Heading Animation  */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    /* transform: translateX(-100px); */
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/* Link is the normal State "https://developer.mozilla.org/en-US/docs/Web/CSS/:link" */
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  /* text-align: center; */
+  /* margin: 0 auto; */
+  border-radius: 10rem;
+  transition: box-shadow 0.2s;
+  font-size: 1.45rem;
+  /* For After  */
+  position: relative; }
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.45);
+  color: #050001; }
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.45); }
+
+.btn--white {
+  background-color: #fff;
+  /* color: #777; */
+  /* color: #9a3159; */
+  color: #4a1d39; }
+
+/* After (Virtual Button as child)  */
+.btn::after {
+  /* content: "After"; */
+  /* background-color: green;
+    color: yellow; */
+  /* Both Have to be specified  dispaly be same nad width and height be same as actual button*/
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  /* border-radius: 100px; */
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s; }
+
+.btn--white::after {
+  background-color: #fff; }
+
+/* We want to see the child button (After Element) */
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  /* background-color: #fff; */
+  opacity: 0; }
+
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  /* Animation delay 0.75s*/
+  animation-fill-mode: backwards;
+  /* To solve the issue button appeared while refereing page then animation start (ON&OFF to check)*/ }
+
+/* --Header--  */
+.main-header {
+  height: 95vh;
+  /* background-image: linear-gradient(
+        to right bottom,
+        rgba(255, 56, 93, 0.55),
+        rgba(221, 56, 100, 0.6)
+      ),
+      url(../img/hero1.jpg); */
+  background-image: linear-gradient(to right bottom, rgba(255, 56, 93, 0.6), #ff385d57), url(../img/hero1.jpg);
+  /* background-image: linear-gradient( to right bottom, rgb(233 30 99 / 0.70), rgb(0 0 0 / 60%) ), url(../img/hero1.jpg); */
+  background-size: cover;
+  /* background-position: center; 50% 50% same */
+  background-position: 50% 80%;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .main-header .logo-box {
+    position: absolute;
+    top: 3rem;
+    left: 3rem; }
+
+.main-header__logo {
+  height: 3.5rem; }
+
+.main-header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* For Centering Button  */
+  text-align: center; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  /* To Solve Shake In the Animation of Heading  */
+  backface-visibility: hidden;
+  margin-bottom: 4rem; }
+  .heading-primary-main {
+    display: block;
+    font-size: 5.2rem;
+    letter-spacing: 3.8px;
+    font-weight: 400;
+    animation-name: moveInLeft;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-out;
+    /* animation-delay: ;
+      animation-iteration-count: ; */ }
+  .heading-primary-sub {
+    display: block;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 4.8px;
+    /* color: #f0f8ffcf; */
+    color: #ffffffd6;
+    /* text-shadow: 2px 3px 5px rgba(202, 200, 194, 0.6); */
+    text-shadow: 0.2rem 0.4rem 0.3rem rgba(0, 0, 0, 0.3);
+    animation: moveInRight 1.3s ease-out; }
+
+/* --End Of Header--  */

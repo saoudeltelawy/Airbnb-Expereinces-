@@ -1,0 +1,86 @@
+/* --Header--  */
+.main-header {
+  height: 95vh;
+  /* background-image: linear-gradient(
+        to right bottom,
+        rgba(255, 56, 93, 0.55),
+        rgba(221, 56, 100, 0.6)
+      ),
+      url(../img/hero1.jpg); */
+
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 56, 93, 0.6),
+      #ff385d57
+    ),
+    url(../img/hero1.jpg);
+
+  /* background-image: linear-gradient( to right bottom, rgb(233 30 99 / 0.70), rgb(0 0 0 / 60%) ), url(../img/hero1.jpg); */
+
+  background-size: cover;
+  /* background-position: center; 50% 50% same */
+  background-position: 50% 80%;
+  position: relative;
+
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  .logo-box {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+  }
+}
+
+.main-header__logo {
+  height: 3.5rem;
+}
+
+.main-header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* For Centering Button  */
+  text-align: center;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  /* To Solve Shake In the Animation of Heading  */
+  backface-visibility: hidden;
+
+  margin-bottom: 4rem;
+
+  &-main {
+    display: block;
+    font-size: 5.2rem;
+    letter-spacing: 3.8px;
+    font-weight: 400;
+    animation-name: moveInLeft;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-out;
+    /* animation-delay: ;
+      animation-iteration-count: ; */
+  }
+
+  &-sub {
+    display: block;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 4.8px;
+    /* color: #f0f8ffcf; */
+    color: #ffffffd6;
+    /* text-shadow: 2px 3px 5px rgba(202, 200, 194, 0.6); */
+    text-shadow: 0.2rem 0.4rem 0.3rem rgba(0, 0, 0, 0.3);
+    animation: moveInRight 1.3s ease-out;
+  }
+
+}
+
+
+
+/* --End Of Header--  */

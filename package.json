@@ -1,0 +1,17 @@
+{
+  "name": "airbnb_experience",
+  "version": "1.0.0",
+  "description": "This is a clone webiste for Airbnb Expereicne Using Pure CSS3 & SASS for Dev.",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/main.css -w"
+  },
+  "author": "Saoud ElTelawy",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
+}

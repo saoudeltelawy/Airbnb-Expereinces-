@@ -1,0 +1,76 @@
+
+/* Link is the normal State "https://developer.mozilla.org/en-US/docs/Web/CSS/:link" */
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  /* text-align: center; */
+  /* margin: 0 auto; */
+  border-radius: 10rem;
+  transition: box-shadow 0.2s;
+  font-size: 1.45rem;
+
+  /* For After  */
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.45);
+
+  color: darken($main-color, 60%);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.45);
+}
+
+.btn--white {
+  background-color: $color-white;
+  /* color: #777; */
+  /* color: #9a3159; */
+  color: #4a1d39;
+}
+
+/* After (Virtual Button as child)  */
+.btn::after {
+  /* content: "After"; */
+  /* background-color: green;
+    color: yellow; */
+  /* Both Have to be specified  dispaly be same nad width and height be same as actual button*/
+  content: "";
+  display: inline-block;
+
+  width: 100%;
+  height: 100%;
+
+  /* border-radius: 100px; */
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn--white::after {
+  background-color: $color-white;
+}
+
+/* We want to see the child button (After Element) */
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  /* background-color: #fff; */
+  opacity: 0;
+}
+
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  /* Animation delay 0.75s*/
+  animation-fill-mode: backwards;
+  /* To solve the issue button appeared while refereing page then animation start (ON&OFF to check)*/
+}
